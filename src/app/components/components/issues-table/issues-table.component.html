@@ -17,11 +17,13 @@
       </ng-template>
       <ng-template pTemplate="header">
         <tr>
-          <th>Name</th>
-          <th>Country</th>
-          <th>Agent</th>
+          <th>Issue name</th>
+          <th>Creator</th>
+          <th>Responsible</th>
+          <th>Type</th>
           <th>Status</th>
-          <th style="width: 6rem">Verified</th>
+          <th>Creation date</th>
+          <!-- <th style="width: 6rem">Verified</th> -->
         </tr>
         <tr>
           <th>
@@ -59,12 +61,43 @@
             </p-columnFilter>
           </th>
           <th>
-            <p-columnFilter type="boolean" field="verified"></p-columnFilter>
+            <!-- <p-columnFilter type="boolean" field="verified"></p-columnFilter> -->
+            <!-- <p-columnFilter type="text" field="name"></p-columnFilter> -->
+             <p-columnFilter field="status" matchMode="equals" [showMenu]="false">
+               <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                 <p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any"
+                   [showClear]="true">
+                   <ng-template let-option pTemplate="item">
+                     <span [class]="'customer-badge status-' + option.value">{{option.label}}</span>
+                   </ng-template>
+                 </p-dropdown>
+               </ng-template>
+             </p-columnFilter>
+          </th>
+          <th>
+            <!-- <p-columnFilter type="boolean" field="verified"></p-columnFilter> -->
+            <!-- <p-columnFilter type="text" field="name"></p-columnFilter> -->
+            <p-columnFilter field="status" matchMode="equals" [showMenu]="false">
+              <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                <p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any"
+                  [showClear]="true">
+                  <ng-template let-option pTemplate="item">
+                    <span [class]="'customer-badge status-' + option.value">{{option.label}}</span>
+                  </ng-template>
+                </p-dropdown>
+              </ng-template>
+            </p-columnFilter>
           </th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-customer>
         <tr>
+          <td>
+            {{customer.name}}
+          </td>
+          <td>
+            {{customer.name}}
+          </td>
           <td>
             {{customer.name}}
           </td>
@@ -80,12 +113,12 @@
             <span class="image-text">{{customer.representative.name}}</span>
           </td>
           <td>
-            <span [class]="'customer-badge status-' + customer.status">{{customer.status}}</span>
+            <span [class]="'customer-badge status-' + customer.status">{{customer.date | date: 'MMMM d, y'}}</span>
           </td>
-          <td>
+          <!-- <td>
             <i class="pi"
               [ngClass]="{'true-icon pi-check-circle': customer.verified, 'false-icon pi-times-circle': !customer.verified}"></i>
-          </td>
+          </td> -->
         </tr>
       </ng-template>
       <ng-template pTemplate="emptymessage">
