@@ -11,6 +11,9 @@ export interface Representative {
 export interface Customer {
   id?: number;
   name?: string;
+  issueJira?: string;
+  issueDescription?: string;
+  typeTask?: string;
   country?: Country;
   company?: string;
   date?: string | Date;

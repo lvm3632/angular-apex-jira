@@ -2,11 +2,16 @@
 
 <ng-template #issueTable>
   <div class="card">
+    <h2>Archived issues</h2>
     <p-table #dt2 [value]="customers" dataKey="id" [rows]="10" [showCurrentPageReport]="true"
-      [rowsPerPageOptions]="[10,25,50]" [loading]="loading" [paginator]="true"
-      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-      [globalFilterFields]="['name','country.name','representative.name','status']">
-      <ng-template pTemplate="caption">
+      [rowsPerPageOptions]="[10, 25, 50]" [loading]="loading" [paginator]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [globalFilterFields]="[
+        'issueJira',
+        'country.name',
+        'representative.name',
+        'status'
+      ]">
+      <!-- <ng-template pTemplate="caption">
         <div class="flex">
           <span class="p-input-icon-left ml-auto">
             <i class="pi pi-search"></i>
@@ -14,7 +19,7 @@
             $event)" placeholder="Search keyword" />
           </span>
         </div>
-      </ng-template>
+      </ng-template> -->
       <ng-template pTemplate="header">
         <tr>
           <th>Issue name</th>
@@ -27,10 +32,10 @@
         </tr>
         <tr>
           <th>
-            <p-columnFilter type="text" field="name"></p-columnFilter>
+            <p-columnFilter type="text" field="issueJira"></p-columnFilter>
           </th>
           <th>
-            <p-columnFilter type="text" field="country.name"></p-columnFilter>
+            <p-columnFilter type="text" field="representative.name"></p-columnFilter>
           </th>
           <th>
             <p-columnFilter field="representative" matchMode="in" [showMenu]="false">
@@ -41,7 +46,7 @@
                     <div class="p-multiselect-representative-option">
                       <!-- <img [alt]="option.label" src="assets/showcase/images/demo/avatar/{{option.image}}" width="32"
                       style="vertical-align: middle" /> -->
-                      <span class="ml-1">{{option.name}}</span>
+                      <span class="ml-1">{{ option.name }}</span>
                     </div>
                   </ng-template>
                 </p-multiSelect>
@@ -49,12 +54,14 @@
             </p-columnFilter>
           </th>
           <th>
-            <p-columnFilter field="status" matchMode="equals" [showMenu]="false">
+            <p-columnFilter field="typeTask" matchMode="equals" [showMenu]="false">
               <ng-template pTemplate="filter" let-value let-filter="filterCallback">
-                <p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any"
+                <p-dropdown [ngModel]="value" [options]="types" (onChange)="filter($event.value)" placeholder="Any"
                   [showClear]="true">
                   <ng-template let-option pTemplate="item">
-                    <span [class]="'customer-badge status-' + option.value">{{option.label}}</span>
+                    <span [class]="'customer-badge status-' + option.value">{{
+                      option.label
+                      }}</span>
                   </ng-template>
                 </p-dropdown>
               </ng-template>
@@ -63,16 +70,18 @@
           <th>
             <!-- <p-columnFilter type="boolean" field="verified"></p-columnFilter> -->
             <!-- <p-columnFilter type="text" field="name"></p-columnFilter> -->
-             <p-columnFilter field="status" matchMode="equals" [showMenu]="false">
-               <ng-template pTemplate="filter" let-value let-filter="filterCallback">
-                 <p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any"
-                   [showClear]="true">
-                   <ng-template let-option pTemplate="item">
-                     <span [class]="'customer-badge status-' + option.value">{{option.label}}</span>
-                   </ng-template>
-                 </p-dropdown>
-               </ng-template>
-             </p-columnFilter>
+            <p-columnFilter field="status" matchMode="equals" [showMenu]="false">
+              <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                <p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any"
+                  [showClear]="true">
+                  <ng-template let-option pTemplate="item">
+                    <span [class]="'customer-badge status-' + option.value">{{
+                      option.label
+                      }}</span>
+                  </ng-template>
+                </p-dropdown>
+              </ng-template>
+            </p-columnFilter>
           </th>
           <th>
             <!-- <p-columnFilter type="boolean" field="verified"></p-columnFilter> -->
@@ -82,7 +91,9 @@
                 <p-dropdown [ngModel]="value" [options]="statuses" (onChange)="filter($event.value)" placeholder="Any"
                   [showClear]="true">
                   <ng-template let-option pTemplate="item">
-                    <span [class]="'customer-badge status-' + option.value">{{option.label}}</span>
+                    <span [class]="'customer-badge status-' + option.value">{{
+                      option.label
+                      }}</span>
                   </ng-template>
                 </p-dropdown>
               </ng-template>
@@ -92,28 +103,31 @@
       </ng-template>
       <ng-template pTemplate="body" let-customer>
         <tr>
-          <td>
-            {{customer.name}}
+          <td id="{{ customer.id }}" (click)="this.onClickName($event)" style="cursor: pointer">
+            {{ customer.issueJira }} -
+            {{ (customer.issueDescription | slice: 0:50) + "..." }}
           </td>
           <td>
-            {{customer.name}}
+            {{ customer.representative.name }}
           </td>
           <td>
-            {{customer.name}}
+            {{ customer.name }}
           </td>
           <td>
             <!-- <img src="assets/showcase/images/demo/flag/flag_placeholder.png"
             [class]="'flag flag-' + customer.country.code" width="30"> -->
-            <span class="image-text">{{customer.country.name}}</span>
+            <span class="image-text">{{ customer.typeTask }}</span>
           </td>
           <td>
             <!-- <img [alt]="customer.representative.name"
             src="assets/showcase/images/demo/avatar/{{customer.representative.image}}" width="32"
             style="vertical-align: middle" /> -->
-            <span class="image-text">{{customer.representative.name}}</span>
+            <span class="image-text">{{ customer.status }}</span>
           </td>
           <td>
-            <span [class]="'customer-badge status-' + customer.status">{{customer.date | date: 'MMMM d, y'}}</span>
+            <span [class]="'customer-badge status-' + customer.status">{{
+              customer.date | date: "MMMM d, y"
+              }}</span>
           </td>
           <!-- <td>
             <i class="pi"
@@ -123,12 +137,30 @@
       </ng-template>
       <ng-template pTemplate="emptymessage">
         <tr>
-          <td colspan="5">No customers found.</td>
+          <td colspan="5">No issues found.</td>
         </tr>
       </ng-template>
     </p-table>
   </div>
 </ng-template>
 
-
-
+<p-dialog [(visible)]="display">
+  <ng-template pTemplate="header">
+    <h2 class="mb-0">{{ this.issueJira }}</h2>
+  </ng-template>
+  <h3 class="mt-0">Description task: </h3>
+  <p>{{ this.descriptionJira }}</p>
+  <h3>Type: </h3>
+  <p>{{ this.typeTask }}</p>
+  <h3>Status: </h3>
+  <p>{{ this.status }}</p>
+  <h3>Reporter: </h3>
+  <p>{{ this.reporter }}</p>
+  <h3>Assignee: </h3>
+  <p>{{ this.assignee }}</p>
+    <h3>Create Date: </h3>
+    <p>{{ this.createDate }}</p>
+  <ng-template pTemplate="footer">
+    <p-button icon="pi pi-check" (click)="display = false" label="Accept"></p-button>
+  </ng-template>
+</p-dialog>

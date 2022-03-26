@@ -56,11 +56,10 @@ import { RouterModule } from '@angular/router';
     ProgressBarModule,
     HttpClientModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    DialogModule,
   ],
-  exports:[
-    IssuesTableComponent
-  ],
+  exports: [IssuesTableComponent],
   providers: [CustomerService],
 })
 export class ComponentsModule {}
