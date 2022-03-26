@@ -17,6 +17,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { SidebarModule } from 'primeng/sidebar';
 import { ComponentsModule } from './components/components/components.module';
+import { IssuesTableComponent } from './components/components/issues-table/issues-table.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,7 +38,6 @@ import { ComponentsModule } from './components/components/components.module';
     ButtonModule,
     RippleModule,
     SidebarModule,
-    ComponentsModule,
   ],
   providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent],

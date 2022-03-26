@@ -14,26 +14,21 @@
               <span class="font-medium inline text-base lg:text-xs lg:block">Home</span>
             </a>
           </li>
-          <li>
+          <!-- <li>
             <a pRipple
               class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center text-600 border-left-2 border-transparent hover:border-300 transition-duration-150 transition-colors">
               <i class="pi pi-search mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl"></i>
               <span class="font-medium inline text-base lg:text-xs lg:block">Search</span>
             </a>
-          </li>
-          <li>
-            <a pRipple
-              class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center text-600 border-left-2 border-transparent hover:border-300 transition-duration-150 transition-colors">
-              <i class="pi pi-users mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl"></i>
-              <span class="font-medium inline text-base lg:text-xs lg:block">Team</span>
-            </a>
-          </li>
+          </li> -->
+
           <li class="relative">
             <a pRipple
               class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center text-600 border-left-2 border-transparent hover:border-300 transition-duration-150 transition-colors"
               pStyleClass="@next" enterClass="hidden" leaveToClass="hidden" [hideOnOutsideClick]="true">
-              <i class="pi pi-chart-line mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl" pBadge="3"
-                severity="danger"></i>
+              <!-- <i class="pi pi-chart-line mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl" pBadge="3"
+                severity="danger"></i> -->
+              <i class="pi pi-chart-line mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl"></i>
               <span class="font-medium inline text-base lg:text-xs lg:block">Reports</span>
               <i class="pi pi-chevron-down ml-auto lg:hidden"></i>
             </a>
@@ -43,8 +38,8 @@
                 <a pRipple
                   class="flex align-items-center cursor-pointer p-3 hover:surface-100 hover:text-900 border-round text-600 hover:text-700 transition-duration-150 transition-colors"
                   pStyleClass="@next" toggleClass="hidden">
-                  <i class="pi pi-chart-line mr-2"></i>
-                  <span class="font-medium">Revenue</span>
+                  <i class="pi pi-ellipsis-v mr-2"></i>
+                  <span class="font-medium">Information</span>
                   <i class="pi pi-chevron-down ml-auto"></i>
                 </a>
                 <ul
@@ -53,32 +48,39 @@
                     <a pRipple
                       class="flex align-items-center cursor-pointer p-3 hover:surface-100 hover:text-900 border-round text-600 hover:text-700 transition-duration-150 transition-colors">
                       <i class="pi pi-table mr-2"></i>
-                      <span class="font-medium">View</span>
+                      <span class="font-medium">Dashboards</span>
                     </a>
                   </li>
                   <li>
-                    <a pRipple
+                    <a pRipple routerLink="/issues" style="text-decoration: none;"
                       class="flex align-items-center cursor-pointer p-3 hover:surface-100 hover:text-900 border-round text-600 hover:text-700 transition-duration-150 transition-colors">
-                      <i class="pi pi-search mr-2"></i>
-                      <span class="font-medium">Search</span>
+                      <i class="pi pi-book mr-2"></i>
+                      <span class="font-medium" >Issues</span>
                     </a>
                   </li>
                 </ul>
               </li>
-              <li>
+              <!-- <li>
                 <a pRipple
                   class="flex align-items-center cursor-pointer p-3 hover:surface-100 hover:text-900 border-round text-600 hover:text-700 transition-duration-150 transition-colors">
                   <i class="pi pi-chart-line mr-2"></i>
                   <span class="font-medium">Expenses</span>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </li>
-          <li>
+          <!-- <li>
             <a pRipple
               class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center text-600 border-left-2 border-transparent hover:border-300 transition-duration-150 transition-colors">
               <i class="pi pi-calendar mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl"></i>
               <span class="font-medium inline text-base lg:text-xs lg:block">Events</span>
+            </a>
+          </li> -->
+          <li>
+            <a pRipple
+              class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center text-600 border-left-2 border-transparent hover:border-300 transition-duration-150 transition-colors">
+              <i class="pi pi-users mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl"></i>
+              <span class="font-medium inline text-base lg:text-xs lg:block">Team</span>
             </a>
           </li>
           <li>
@@ -102,6 +104,7 @@
     </div>
   </div>
   <div class="min-h-screen flex flex-column relative flex-auto">
+
     <div
       class="flex justify-content-between align-items-center px-5 surface-section relative lg:static border-bottom-1 surface-border"
       style="height:60px">
@@ -113,7 +116,7 @@
         </a>
         <span class="p-input-icon-left">
           <i class="pi pi-search"></i>
-          <input type="text" pInputText class="border-none w-10rem sm:w-20rem" placeholder="Search">
+          <input type="text" pInputText class="border-none w-10rem sm:w-20rem" placeholder="Search issue or dashboard">
         </span>
       </div>
       <a pRipple class="cursor-pointer block lg:hidden text-700" pStyleClass="@next" enterClass="hidden"
@@ -160,8 +163,8 @@
                   style="width:49px; height: 49px">
                   <i class="pi pi-inbox text-xl text-white"></i>
                 </span>
-                <div class="text-2xl font-medium text-white mb-2">123K</div>
-                <span class="text-blue-100 font-medium">Messages</span>
+                <div class="text-2xl font-medium text-white mb-2">457</div>
+                <span class="text-blue-100 font-medium">Open</span>
               </div>
             </div>
             <div class="col-12 md:col-6 lg:col-3 p-3">
@@ -170,8 +173,8 @@
                   style="width:49px; height: 49px">
                   <i class="pi pi-map-marker text-xl text-white"></i>
                 </span>
-                <div class="text-2xl font-medium text-white mb-2">23K</div>
-                <span class="text-purple-100 font-medium">Check-ins</span>
+                <div class="text-2xl font-medium text-white mb-2">679</div>
+                <span class="text-purple-100 font-medium">Work in progress</span>
               </div>
             </div>
             <div class="col-12 md:col-6 lg:col-3 p-3">
@@ -180,18 +183,18 @@
                   style="width:49px; height: 49px">
                   <i class="pi pi-file text-xl text-white"></i>
                 </span>
-                <div class="text-2xl font-medium text-white mb-2">23K</div>
-                <span class="text-indigo-100 font-medium">Files</span>
+                <div class="text-2xl font-medium text-white mb-2">221</div>
+                <span class="text-indigo-100 font-medium">Pending</span>
               </div>
             </div>
             <div class="col-12 md:col-6 lg:col-3 p-3">
-              <div class="p-3 text-center bg-orange-500" style="border-radius: 12px">
-                <span class="inline-flex justify-content-center align-items-center bg-orange-600 border-circle mb-3"
+              <div class="p-3 text-center bg-green-600" style="border-radius: 12px">
+                <span class="inline-flex justify-content-center align-items-center bg-green-800 border-circle mb-3"
                   style="width:49px; height: 49px">
                   <i class="pi pi-users text-xl text-white"></i>
                 </span>
-                <div class="text-2xl font-medium text-white mb-2">40K</div>
-                <span class="text-orange-100 font-medium">Users</span>
+                <div class="text-2xl font-medium text-white mb-2">1265</div>
+                <span class="text-indigo-100 font-medium">Done</span>
               </div>
             </div>
           </div>
@@ -199,50 +202,334 @@
         <div class="col-12 lg:col-6">
           <div class="shadow-2 surface-card border-round p-3">
             <div class="flex align-items-center justify-content-between">
-              <span class="text-xl font-medium text-900">Traffic Distribution</span>
+              <span class="text-xl font-medium text-900">Issues</span>
             </div>
             <div class="mt-3">
               <div class="grid">
                 <div class="col-12 md:col-6">
-                  <div class="text-center border-1 surface-border border-round p-4">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
                     <i class="pi pi-twitter text-5xl text-blue-500"></i>
                     <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
                     <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/logo-dropbox.png" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Features</span>
+                        <p class="text-600 mt-0 mb-0">Total: 63</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+
+                </div>
+                <div class="col-12 md:col-6">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
+                    <i class="pi pi-twitter text-5xl text-blue-500"></i>
+                    <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
+                    <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/logo-evernote.png" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Stories</span>
+                        <p class="text-600 mt-0 mb-0">Total: 152</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div class="col-12 md:col-6 text-center">
-                  <div class="text-center border-1 surface-border border-round p-4">
-                    <i class="pi pi-vimeo text-5xl text-blue-500"></i>
-                    <div class="text-900 text-2xl font-700 my-3 font-bold">10.20K</div>
-                    <span class="font-medium text-600">Vimeo</span>
+                <div class="col-12 md:col-6">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
+                    <i class="pi pi-twitter text-5xl text-blue-500"></i>
+                    <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
+                    <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/logo-pwd.png" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Epics</span>
+                        <p class="text-600 mt-0 mb-0">Total: 23</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div class="col-12 md:col-6 text-center">
-                  <div class="text-center border-1 surface-border border-round p-4">
-                    <i class="pi pi-facebook text-5xl text-blue-500"></i>
-                    <div class="text-900 text-2xl font-700 my-3 font-bold">5.60K</div>
-                    <span class="font-medium text-600">Facebook</span>
+                <div class="col-12 md:col-6">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
+                    <i class="pi pi-twitter text-5xl text-blue-500"></i>
+                    <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
+                    <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/logo-slack.png" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Initiatives</span>
+                        <p class="text-600 mt-0 mb-0">Total: 42</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div class="col-12 md:col-6 text-center">
-                  <div class="text-center border-1 surface-border border-round p-4">
-                    <i class="pi pi-discord text-5xl text-indigo-500"></i>
-                    <div class="text-900 text-2xl font-700 my-3 font-bold">23.53K</div>
-                    <span class="font-medium text-600">Discord</span>
+                <div class="col-12 md:col-6">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
+                    <i class="pi pi-twitter text-5xl text-blue-500"></i>
+                    <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
+                    <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/logo-spotify.png" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Defects</span>
+                        <p class="text-600 mt-0 mb-0">Total: 89</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div class="col-12 md:col-6 text-center">
-                  <div class="text-center border-1 surface-border border-round p-4">
-                    <i class="pi pi-github text-5xl text-purple-500"></i>
-                    <div class="text-900 text-2xl font-700 my-3 font-bold">16.70K</div>
-                    <span class="font-medium text-600">GitHub</span>
-                  </div>
-                </div>
-                <div class="col-12 md:col-6 text-center">
-                  <div class="text-center border-1 surface-border border-round p-4">
-                    <i class="pi pi-google text-5xl text-pink-500"></i>
-                    <div class="text-900 text-2xl font-700 my-3 font-bold">16.50K</div>
-                    <span class="font-medium text-600">Google</span>
+                <div class="col-12 md:col-6">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
+                    <i class="pi pi-twitter text-5xl text-blue-500"></i>
+                    <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
+                    <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/hyper-500.svg" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Tests</span>
+                        <p class="text-600 mt-0 mb-0">Total: 89</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -252,7 +539,7 @@
         <div class="col-12 lg:col-6">
           <div class="surface-card shadow-2 border-round p-4">
             <div class="flex align-items-center justify-content-between mb-4">
-              <span class="text-xl font-medium text-900">Quarter Goals</span>
+              <span class="text-xl font-medium text-900">Working in progress</span>
             </div>
             <div class="surface-border border-1 border-round p-3 mb-4">
               <span class="text-900 font-medium text-3xl">85% <span class="text-600">(2125/2500)</span></span>
@@ -268,39 +555,44 @@
             </div>
             <ul class="mt-4 list-none p-0 mx-0">
               <li class="flex align-items-center pb-3">
-                <span style="width:1rem;height:1rem" class="border-round bg-indigo-500 mr-3 flex-shrink-0"></span>
-                <span class="text-xl font-medium text-90">Watch</span>
+                <span style="width:1rem;height:1rem" class="border-round bg-green-500 mr-3 flex-shrink-0"></span>
+                <span class="text-xl font-medium text-90">Story</span>
                 <span class="text-600 text-xl font-medium ml-auto">152</span>
               </li>
               <li class="flex align-items-center py-3">
                 <span style="width:1rem;height:1rem" class="border-round bg-blue-500 mr-3 flex-shrink-0"></span>
-                <span class="text-xl font-medium text-90">Blue Band</span>
+                <span class="text-xl font-medium text-90">Feature</span>
                 <span class="text-600 text-xl font-medium ml-auto">63</span>
               </li>
               <li class="flex align-items-center py-3">
                 <span style="width:1rem;height:1rem" class="border-round bg-orange-500 mr-3 flex-shrink-0"></span>
-                <span class="text-xl font-medium text-90">Controller</span>
+                <span class="text-xl font-medium text-90">Epic</span>
                 <span class="text-600 text-xl font-medium ml-auto">23</span>
               </li>
               <li class="flex align-items-center py-3">
                 <span style="width:1rem;height:1rem" class="border-round bg-purple-500 mr-3 flex-shrink-0"></span>
-                <span class="text-xl font-medium text-90">Lime Band</span>
+                <span class="text-xl font-medium text-90">Initiative</span>
                 <span class="text-600 text-xl font-medium ml-auto">42</span>
               </li>
               <li class="flex align-items-center py-3">
                 <span style="width:1rem;height:1rem" class="border-round bg-yellow-500 mr-3 flex-shrink-0"></span>
-                <span class="text-xl font-medium text-90">Phone Case</span>
+                <span class="text-xl font-medium text-90">Documentation Task</span>
                 <span class="text-600 text-xl font-medium ml-auto">134</span>
               </li>
               <li class="flex align-items-center py-3">
+                <span style="width:1rem;height:1rem" class="border-round bg-orange-600 mr-3 flex-shrink-0"></span>
+                <span class="text-xl font-medium text-90">Defect</span>
+                <span class="text-600 text-xl font-medium ml-auto">89</span>
+              </li>
+              <li class="flex align-items-center py-3">
                 <span style="width:1rem;height:1rem" class="border-round bg-cyan-500 mr-3 flex-shrink-0"></span>
-                <span class="text-xl font-medium text-90">T-Shirt</span>
+                <span class="text-xl font-medium text-90">Test</span>
                 <span class="text-600 text-xl font-medium ml-auto">89</span>
               </li>
             </ul>
           </div>
         </div>
-        <div class="col-12">
+        <!-- <div class="col-12">
           <div class="surface-ground">
             <div class="grid">
               <div class="col-12 lg:col-4 p-2">
@@ -316,8 +608,8 @@
                     <li class="mb-5">
                       <div class="flex justify-content-between align-items-center">
                         <span class="text-900 inline-flex justify-content-between align-items-center">
-                          <i class="pi pi-twitter mr-2"></i>
-                          <span class="font-medium text-900">Twitter</span>
+                           <i class="pi pi-twitter mr-2"></i>
+                          <span class="font-medium text-900">Open</span>
                         </span>
                         <span class="text-cyan-500 font-medium">34.00%</span>
                       </div>
@@ -328,8 +620,8 @@
                     <li class="mb-5">
                       <div class="flex justify-content-between align-items-center">
                         <span class="text-900 inline-flex justify-content-between align-items-center">
-                          <i class="pi pi-facebook mr-2"></i>
-                          <span class="font-medium text-900">Facebook</span>
+                           <i class="pi pi-facebook mr-2"></i>
+                          <span class="font-medium text-900">Work in progress</span>
                         </span>
                         <span class="text-indigo-500 font-medium">45.86%</span>
                       </div>
@@ -340,8 +632,8 @@
                     <li>
                       <div class="flex justify-content-between align-items-center">
                         <span class="text-900 inline-flex justify-content-between align-items-center">
-                          <i class="pi pi-google mr-2"></i>
-                          <span class="font-medium text-900">Google</span>
+                           <i class="pi pi-google mr-2"></i>
+                          <span class="font-medium text-900">Done</span>
                         </span>
                         <span class="text-orange-500 font-medium">79.00%</span>
                       </div>
@@ -365,8 +657,8 @@
                     <li class="mb-5">
                       <div class="flex justify-content-between align-items-center">
                         <span class="text-900 inline-flex justify-content-between align-items-center">
-                          <i class="pi pi-twitter mr-2"></i>
-                          <span class="font-medium text-900">Twitter</span>
+                           <i class="pi pi-twitter mr-2"></i>
+                          <span class="font-medium text-900">Open</span>
                         </span>
                         <span class="text-cyan-500 font-medium">64.47%</span>
                       </div>
@@ -377,8 +669,8 @@
                     <li class="mb-5">
                       <div class="flex justify-content-between align-items-center">
                         <span class="text-900 inline-flex justify-content-between align-items-center">
-                          <i class="pi pi-facebook mr-2"></i>
-                          <span class="font-medium text-900">Facebook</span>
+                           <i class="pi pi-facebook mr-2"></i>
+                          <span class="font-medium text-900">Work in progress</span>
                         </span>
                         <span class="text-indigo-500 font-medium">75.67%</span>
                       </div>
@@ -389,8 +681,8 @@
                     <li>
                       <div class="flex justify-content-between align-items-center">
                         <span class="text-900 inline-flex justify-content-between align-items-center">
-                          <i class="pi pi-google mr-2"></i>
-                          <span class="font-medium text-900">Google</span>
+                           <i class="pi pi-google mr-2"></i>
+                          <span class="font-medium text-900">Done</span>
                         </span>
                         <span class="text-orange-500 font-medium">45.00%</span>
                       </div>
@@ -414,8 +706,8 @@
                     <li class="mb-5">
                       <div class="flex justify-content-between align-items-center">
                         <span class="text-900 inline-flex justify-content-between align-items-center">
-                          <i class="pi pi-twitter mr-2"></i>
-                          <span class="font-medium text-900">Twitter</span>
+                           <i class="pi pi-twitter mr-2"></i>
+                          <span class="font-medium text-900">Open</span>
                         </span>
                         <span class="text-cyan-500 font-medium">23.55%</span>
                       </div>
@@ -427,7 +719,7 @@
                       <div class="flex justify-content-between align-items-center">
                         <span class="text-900 inline-flex justify-content-between align-items-center">
                           <i class="pi pi-facebook mr-2"></i>
-                          <span class="font-medium text-900">Facebook</span>
+                          <span class="font-medium text-900">Work in progress</span>
                         </span>
                         <span class="text-indigo-500 font-medium">78.65%</span>
                       </div>
@@ -438,8 +730,8 @@
                     <li>
                       <div class="flex justify-content-between align-items-center">
                         <span class="text-900 inline-flex justify-content-between align-items-center">
-                          <i class="pi pi-google mr-2"></i>
-                          <span class="font-medium text-900">Google</span>
+                           <i class="pi pi-google mr-2"></i>
+                          <span class="font-medium text-900">Done</span>
                         </span>
                         <span class="text-orange-500 font-medium">86.54%</span>
                       </div>
@@ -452,7 +744,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

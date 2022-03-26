@@ -12,11 +12,25 @@ import { MenuModule } from 'primeng/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CheckboxModule } from 'primeng/checkbox';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+import { IssuesTableComponent } from './issues-table/issues-table.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { CalendarModule } from 'primeng/calendar';
+import { SliderModule } from 'primeng/slider';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { ContextMenuModule } from 'primeng/contextmenu';
+import { DialogModule } from 'primeng/dialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { ProgressBarModule } from 'primeng/progressbar';
+import { CustomerService } from 'src/app/services/customer.service';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-  declarations: [HomeComponent, DashboardComponent],
+  declarations: [HomeComponent, DashboardComponent, IssuesTableComponent],
   imports: [
     CommonModule,
     CmpRoutingModule,
@@ -29,7 +43,26 @@ import { SharedModule } from 'src/app/shared/shared.module';
     MenuModule,
     BrowserAnimationsModule,
     CheckboxModule,
-    SharedModule
+    SharedModule,
+    BrowserModule,
+    TableModule,
+    CalendarModule,
+    SliderModule,
+    DialogModule,
+    MultiSelectModule,
+    ContextMenuModule,
+    DropdownModule,
+    ToastModule,
+    ProgressBarModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule
   ],
+  exports:[
+    IssuesTableComponent
+  ],
+  providers: [CustomerService],
 })
 export class ComponentsModule {}
+
+//open, blocked, completed, work in progress
