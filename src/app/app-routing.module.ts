@@ -8,6 +8,10 @@ import { DashboardComponentShared } from './shared/layout/dashboard/dashboard.co
 const routes: Routes = [
   {
     path: '',
+    component: DashboardComponent,
+  },
+  {
+    path: 'home',
     component: HomeComponent,
   },
   {
