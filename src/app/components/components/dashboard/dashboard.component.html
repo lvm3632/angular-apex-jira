@@ -1,0 +1,751 @@
+<div class="min-h-screen flex relative lg:static surface-ground">
+  <div id="app-sidebar-9"
+    class="h-full lg:h-auto surface-section hidden lg:block flex-shrink-0 absolute lg:static left-0 top-0 z-1 border-right-1 surface-border w-18rem lg:w-7rem select-none">
+    <div class="flex flex-column h-full">
+      <div class="flex align-items-center justify-content-center flex-shrink-0" style="height:60px">
+        <img src="assets/images/blocks/logos/hyper-cyan.svg" alt="Image" height="30">
+      </div>
+      <div class="mt-3">
+        <ul class="list-none p-0 m-0">
+          <li>
+            <a pRipple
+              class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center text-cyan-600 border-left-2 border-cyan-600 hover:border-300 transition-duration-150 transition-colors">
+              <i class="pi pi-home mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl"></i>
+              <span class="font-medium inline text-base lg:text-xs lg:block">Home</span>
+            </a>
+          </li>
+          <!-- <li>
+            <a pRipple
+              class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center text-600 border-left-2 border-transparent hover:border-300 transition-duration-150 transition-colors">
+              <i class="pi pi-search mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl"></i>
+              <span class="font-medium inline text-base lg:text-xs lg:block">Search</span>
+            </a>
+          </li> -->
+
+          <li class="relative">
+            <a pRipple
+              class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center text-600 border-left-2 border-transparent hover:border-300 transition-duration-150 transition-colors"
+              pStyleClass="@next" enterClass="hidden" leaveToClass="hidden" [hideOnOutsideClick]="true">
+              <!-- <i class="pi pi-chart-line mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl" pBadge="3"
+                severity="danger"></i> -->
+              <i class="pi pi-chart-line mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl"></i>
+              <span class="font-medium inline text-base lg:text-xs lg:block">Reports</span>
+              <i class="pi pi-chevron-down ml-auto lg:hidden"></i>
+            </a>
+            <ul
+              class="list-none pl-3 pr-0 py-0 lg:p-3 m-0 hidden overflow-y-hidden transition-all transition-duration-400 transition-ease-in-out static border-round-right lg:absolute left-100 top-0 z-1 surface-overlay shadow-none lg:shadow-2 w-full lg:w-15rem">
+              <li>
+                <a pRipple
+                  class="flex align-items-center cursor-pointer p-3 hover:surface-100 hover:text-900 border-round text-600 hover:text-700 transition-duration-150 transition-colors"
+                  pStyleClass="@next" toggleClass="hidden">
+                  <i class="pi pi-ellipsis-v mr-2"></i>
+                  <span class="font-medium">Information</span>
+                  <i class="pi pi-chevron-down ml-auto"></i>
+                </a>
+                <ul
+                  class="list-none py-0 pl-3 pr-0 m-0 hidden overflow-y-hidden transition-all transition-duration-400 transition-ease-in-out">
+                  <li>
+                    <a pRipple routerLink="/dashboard"
+                      class="flex align-items-center cursor-pointer p-3 hover:surface-100 hover:text-900 border-round text-600 hover:text-700 transition-duration-150 transition-colors">
+                      <i class="pi pi-table mr-2"></i>
+                      <span class="font-medium">Dashboards</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a pRipple routerLink="/issues" style="text-decoration: none;"
+                      class="flex align-items-center cursor-pointer p-3 hover:surface-100 hover:text-900 border-round text-600 hover:text-700 transition-duration-150 transition-colors">
+                      <i class="pi pi-book mr-2"></i>
+                      <span class="font-medium" >Issues</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- <li>
+                <a pRipple
+                  class="flex align-items-center cursor-pointer p-3 hover:surface-100 hover:text-900 border-round text-600 hover:text-700 transition-duration-150 transition-colors">
+                  <i class="pi pi-chart-line mr-2"></i>
+                  <span class="font-medium">Expenses</span>
+                </a>
+              </li> -->
+            </ul>
+          </li>
+          <!-- <li>
+            <a pRipple
+              class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center text-600 border-left-2 border-transparent hover:border-300 transition-duration-150 transition-colors">
+              <i class="pi pi-calendar mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl"></i>
+              <span class="font-medium inline text-base lg:text-xs lg:block">Events</span>
+            </a>
+          </li> -->
+          <li>
+            <a pRipple
+              class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center text-600 border-left-2 border-transparent hover:border-300 transition-duration-150 transition-colors">
+              <i class="pi pi-users mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl"></i>
+              <span class="font-medium inline text-base lg:text-xs lg:block">Team</span>
+            </a>
+          </li>
+          <li>
+            <a pRipple
+              class="flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center text-600 border-left-2 border-transparent hover:border-300 transition-duration-150 transition-colors">
+              <i class="pi pi-cog mr-2 lg:mr-0 mb-0 lg:mb-2 text-base lg:text-2xl"></i>
+              <span class="font-medium inline text-base lg:text-xs lg:block">Options</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="mt-auto">
+        <hr class="mb-3 mx-3 border-top-1 border-none surface-border" />
+        <a pRipple
+          class="m-3 flex flex-row lg:flex-column align-items-center cursor-pointer p-3 lg:justify-content-center hover:surface-200 border-round text-600 transition-duration-150 transition-colors">
+          <img src="assets/images/blocks/avatars/circle/avatar-f-1.png" class="mr-2 lg:mr-0"
+            style="width: 32px; height: 32px" />
+          <span class="font-medium inline lg:hidden">Amy Elsner</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="min-h-screen flex flex-column relative flex-auto">
+
+    <div
+      class="flex justify-content-between align-items-center px-5 surface-section relative lg:static border-bottom-1 surface-border"
+      style="height:60px">
+      <div class="flex">
+        <a pRipple class="cursor-pointer block lg:hidden text-700 mr-3" pStyleClass="#app-sidebar-9" enterClass="hidden"
+          enterActiveClass="fadeinleft" leaveToClass="hidden" leaveActiveClass="fadeoutleft"
+          [hideOnOutsideClick]="true">
+          <i class="pi pi-bars text-4xl"></i>
+        </a>
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input type="text" pInputText class="border-none w-10rem sm:w-20rem" placeholder="Search issue or dashboard">
+        </span>
+      </div>
+      <a pRipple class="cursor-pointer block lg:hidden text-700" pStyleClass="@next" enterClass="hidden"
+        enterActiveClass="fadein" leaveToClass="hidden" leaveActiveClass="fadeout" [hideOnOutsideClick]="true">
+        <i class="pi pi-ellipsis-v text-2xl"></i>
+      </a>
+      <ul
+        class="list-none p-0 m-0 hidden lg:flex lg:align-items-center select-none lg:flex-row
+                surface-section border-1 lg:border-none surface-border right-0 top-100 z-1 shadow-2 lg:shadow-none absolute lg:static">
+        <li>
+          <a pRipple class="flex p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer
+                        transition-duration-150 transition-colors">
+            <i class="pi pi-inbox text-base lg:text-2xl mr-2 lg:mr-0"></i>
+            <span class="block lg:hidden font-medium">Inbox</span>
+          </a>
+        </li>
+        <li>
+          <a pRipple class="flex p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer
+                        transition-duration-150 transition-colors">
+            <i class="pi pi-bell text-base lg:text-2xl mr-2 lg:mr-0" pBadge severity="danger"></i>
+            <span class="block lg:hidden font-medium">Notifications</span>
+          </a>
+        </li>
+        <li class="border-top-1 surface-border lg:border-top-none">
+          <a pRipple class="flex p-3 lg:px-3 lg:py-2 align-items-center hover:surface-100 font-medium border-round cursor-pointer
+                        transition-duration-150 transition-colors">
+            <img src="assets/images/blocks/avatars/circle/avatar-f-1.png" class="mr-3 lg:mr-0"
+              style="width: 32px; height: 32px" />
+            <div class="block lg:hidden">
+              <div class="text-900 font-medium">Amy Elsner</div>
+              <span class="text-600 font-medium text-sm">Marketing Specialist</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="p-5 flex flex-column flex-auto">
+      <div class="grid">
+        <div class="col-12">
+          <div class="grid">
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+              <div class="p-3 text-center bg-blue-500" style="border-radius: 12px">
+                <span class="inline-flex justify-content-center align-items-center bg-blue-600 border-circle mb-3"
+                  style="width:49px; height: 49px">
+                  <i class="pi pi-inbox text-xl text-white"></i>
+                </span>
+                <div class="text-2xl font-medium text-white mb-2">457</div>
+                <span class="text-blue-100 font-medium">Open</span>
+              </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+              <div class="p-3 text-center bg-purple-500" style="border-radius: 12px">
+                <span class="inline-flex justify-content-center align-items-center bg-purple-600 border-circle mb-3"
+                  style="width:49px; height: 49px">
+                  <i class="pi pi-map-marker text-xl text-white"></i>
+                </span>
+                <div class="text-2xl font-medium text-white mb-2">679</div>
+                <span class="text-purple-100 font-medium">Work in progress</span>
+              </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+              <div class="p-3 text-center bg-indigo-500" style="border-radius: 12px">
+                <span class="inline-flex justify-content-center align-items-center bg-indigo-600 border-circle mb-3"
+                  style="width:49px; height: 49px">
+                  <i class="pi pi-file text-xl text-white"></i>
+                </span>
+                <div class="text-2xl font-medium text-white mb-2">221</div>
+                <span class="text-indigo-100 font-medium">Pending</span>
+              </div>
+            </div>
+            <div class="col-12 md:col-6 lg:col-3 p-3">
+              <div class="p-3 text-center bg-green-600" style="border-radius: 12px">
+                <span class="inline-flex justify-content-center align-items-center bg-green-800 border-circle mb-3"
+                  style="width:49px; height: 49px">
+                  <i class="pi pi-users text-xl text-white"></i>
+                </span>
+                <div class="text-2xl font-medium text-white mb-2">1265</div>
+                <span class="text-indigo-100 font-medium">Done</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 lg:col-6">
+          <div class="shadow-2 surface-card border-round p-3">
+            <div class="flex align-items-center justify-content-between">
+              <span class="text-xl font-medium text-900">Issues</span>
+            </div>
+            <div class="mt-3">
+              <div class="grid">
+                <div class="col-12 md:col-6">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
+                    <i class="pi pi-twitter text-5xl text-blue-500"></i>
+                    <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
+                    <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/logo-dropbox.png" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Features</span>
+                        <p class="text-600 mt-0 mb-0">Total: 63</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+
+                </div>
+                <div class="col-12 md:col-6">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
+                    <i class="pi pi-twitter text-5xl text-blue-500"></i>
+                    <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
+                    <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/logo-evernote.png" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Stories</span>
+                        <p class="text-600 mt-0 mb-0">Total: 152</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 md:col-6">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
+                    <i class="pi pi-twitter text-5xl text-blue-500"></i>
+                    <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
+                    <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/logo-pwd.png" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Epics</span>
+                        <p class="text-600 mt-0 mb-0">Total: 23</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 md:col-6">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
+                    <i class="pi pi-twitter text-5xl text-blue-500"></i>
+                    <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
+                    <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/logo-slack.png" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Initiatives</span>
+                        <p class="text-600 mt-0 mb-0">Total: 42</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 md:col-6">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
+                    <i class="pi pi-twitter text-5xl text-blue-500"></i>
+                    <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
+                    <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/logo-spotify.png" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Defects</span>
+                        <p class="text-600 mt-0 mb-0">Total: 89</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-12 md:col-6">
+                  <!-- <div class="text-center border-1 surface-border border-round p-4">
+                    <i class="pi pi-twitter text-5xl text-blue-500"></i>
+                    <div class="text-900 text-2xl font-700 my-3 font-bold">12.40K</div>
+                    <span class="font-medium text-600">Twitter</span>
+                  </div> -->
+                  <div class="shadow-2 surface-card border-round p-4 h-full">
+                    <div class="flex align-items-start mb-5">
+                      <img src="assets/images/blocks/logos/hyper-500.svg" width="56" height="56" />
+                      <div class="ml-3">
+                        <span class="block text-900 mb-1 text-xl font-medium">Tests</span>
+                        <p class="text-600 mt-0 mb-0">Total: 89</p>
+                      </div>
+                    </div>
+                    <ul class="list-none p-0 m-0">
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-twitter mr-2"></i> -->
+                            <span class="font-medium text-900">Open</span>
+                          </span>
+                          <span class="text-cyan-500 font-medium">34.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li class="mb-5">
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-facebook mr-2"></i> -->
+                            <span class="font-medium text-900">Work in progress</span>
+                          </span>
+                          <span class="text-indigo-500 font-medium">45.86%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="flex justify-content-between align-items-center">
+                          <span class="text-900 inline-flex justify-content-between align-items-center">
+                            <!-- <i class="pi pi-google mr-2"></i> -->
+                            <span class="font-medium text-900">Done</span>
+                          </span>
+                          <span class="text-orange-500 font-medium">79.00%</span>
+                        </div>
+                        <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                          <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 lg:col-6">
+          <div class="surface-card shadow-2 border-round p-4">
+            <div class="flex align-items-center justify-content-between mb-4">
+              <span class="text-xl font-medium text-900">Working in progress</span>
+            </div>
+            <div class="surface-border border-1 border-round p-3 mb-4">
+              <span class="text-900 font-medium text-3xl">85% <span class="text-600">(2125/2500)</span></span>
+              <ul class="mt-3 list-none p-0 mx-0 flex">
+                <li style="height:1rem" class="flex-1 bg-indigo-500 border-round-left"></li>
+                <li style="height:1rem" class="flex-1 bg-blue-500"></li>
+                <li style="height:1rem" class="flex-1 bg-orange-500"></li>
+                <li style="height:1rem" class="flex-1 bg-purple-500"></li>
+                <li style="height:1rem" class="flex-1 bg-yellow-500"></li>
+                <li style="height:1rem" class="flex-1 bg-cyan-500"></li>
+                <li style="height:1rem" class="flex-1 surface-500 border-round-right"></li>
+              </ul>
+            </div>
+            <ul class="mt-4 list-none p-0 mx-0">
+              <li class="flex align-items-center pb-3">
+                <span style="width:1rem;height:1rem" class="border-round bg-green-500 mr-3 flex-shrink-0"></span>
+                <span class="text-xl font-medium text-90">Story</span>
+                <span class="text-600 text-xl font-medium ml-auto">152</span>
+              </li>
+              <li class="flex align-items-center py-3">
+                <span style="width:1rem;height:1rem" class="border-round bg-blue-500 mr-3 flex-shrink-0"></span>
+                <span class="text-xl font-medium text-90">Feature</span>
+                <span class="text-600 text-xl font-medium ml-auto">63</span>
+              </li>
+              <li class="flex align-items-center py-3">
+                <span style="width:1rem;height:1rem" class="border-round bg-orange-500 mr-3 flex-shrink-0"></span>
+                <span class="text-xl font-medium text-90">Epic</span>
+                <span class="text-600 text-xl font-medium ml-auto">23</span>
+              </li>
+              <li class="flex align-items-center py-3">
+                <span style="width:1rem;height:1rem" class="border-round bg-purple-500 mr-3 flex-shrink-0"></span>
+                <span class="text-xl font-medium text-90">Initiative</span>
+                <span class="text-600 text-xl font-medium ml-auto">42</span>
+              </li>
+              <li class="flex align-items-center py-3">
+                <span style="width:1rem;height:1rem" class="border-round bg-yellow-500 mr-3 flex-shrink-0"></span>
+                <span class="text-xl font-medium text-90">Documentation Task</span>
+                <span class="text-600 text-xl font-medium ml-auto">134</span>
+              </li>
+              <li class="flex align-items-center py-3">
+                <span style="width:1rem;height:1rem" class="border-round bg-orange-600 mr-3 flex-shrink-0"></span>
+                <span class="text-xl font-medium text-90">Defect</span>
+                <span class="text-600 text-xl font-medium ml-auto">89</span>
+              </li>
+              <li class="flex align-items-center py-3">
+                <span style="width:1rem;height:1rem" class="border-round bg-cyan-500 mr-3 flex-shrink-0"></span>
+                <span class="text-xl font-medium text-90">Test</span>
+                <span class="text-600 text-xl font-medium ml-auto">89</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- <div class="col-12">
+          <div class="surface-ground">
+            <div class="grid">
+              <div class="col-12 lg:col-4 p-2">
+                <div class="shadow-2 surface-card border-round p-4 h-full">
+                  <div class="flex align-items-start mb-5">
+                    <img src="assets/images/blocks/avatars/circle-big/avatar-m-1.png" width="56" height="56" />
+                    <div class="ml-3">
+                      <span class="block text-900 mb-1 text-xl font-medium">Cameron Williamson</span>
+                      <p class="text-600 mt-0 mb-0">Marketing Coordinator</p>
+                    </div>
+                  </div>
+                  <ul class="list-none p-0 m-0">
+                    <li class="mb-5">
+                      <div class="flex justify-content-between align-items-center">
+                        <span class="text-900 inline-flex justify-content-between align-items-center">
+                           <i class="pi pi-twitter mr-2"></i>
+                          <span class="font-medium text-900">Open</span>
+                        </span>
+                        <span class="text-cyan-500 font-medium">34.00%</span>
+                      </div>
+                      <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                        <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                      </div>
+                    </li>
+                    <li class="mb-5">
+                      <div class="flex justify-content-between align-items-center">
+                        <span class="text-900 inline-flex justify-content-between align-items-center">
+                           <i class="pi pi-facebook mr-2"></i>
+                          <span class="font-medium text-900">Work in progress</span>
+                        </span>
+                        <span class="text-indigo-500 font-medium">45.86%</span>
+                      </div>
+                      <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                        <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="flex justify-content-between align-items-center">
+                        <span class="text-900 inline-flex justify-content-between align-items-center">
+                           <i class="pi pi-google mr-2"></i>
+                          <span class="font-medium text-900">Done</span>
+                        </span>
+                        <span class="text-orange-500 font-medium">79.00%</span>
+                      </div>
+                      <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                        <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 lg:col-4 p-2">
+                <div class="shadow-2 surface-card border-round p-4 h-full">
+                  <div class="flex align-items-start mb-5">
+                    <img src="assets/images/blocks/avatars/circle-big/avatar-f-2.png" width="56" height="56" />
+                    <div class="ml-3">
+                      <span class="block text-900 mb-1 text-xl font-medium">Kathryn Murphy</span>
+                      <p class="text-600 mt-0 mb-0">Sales Manager</p>
+                    </div>
+                  </div>
+                  <ul class="list-none p-0 m-0">
+                    <li class="mb-5">
+                      <div class="flex justify-content-between align-items-center">
+                        <span class="text-900 inline-flex justify-content-between align-items-center">
+                           <i class="pi pi-twitter mr-2"></i>
+                          <span class="font-medium text-900">Open</span>
+                        </span>
+                        <span class="text-cyan-500 font-medium">64.47%</span>
+                      </div>
+                      <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                        <div class="bg-cyan-500 h-full" style="width:64%; border-radius: 4px"></div>
+                      </div>
+                    </li>
+                    <li class="mb-5">
+                      <div class="flex justify-content-between align-items-center">
+                        <span class="text-900 inline-flex justify-content-between align-items-center">
+                           <i class="pi pi-facebook mr-2"></i>
+                          <span class="font-medium text-900">Work in progress</span>
+                        </span>
+                        <span class="text-indigo-500 font-medium">75.67%</span>
+                      </div>
+                      <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                        <div class="bg-indigo-500 h-full" style="width:75%; border-radius: 4px"></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="flex justify-content-between align-items-center">
+                        <span class="text-900 inline-flex justify-content-between align-items-center">
+                           <i class="pi pi-google mr-2"></i>
+                          <span class="font-medium text-900">Done</span>
+                        </span>
+                        <span class="text-orange-500 font-medium">45.00%</span>
+                      </div>
+                      <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                        <div class="bg-orange-500 h-full" style="width:45%; border-radius: 4px"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-12 lg:col-4 p-2">
+                <div class="shadow-2 surface-card border-round p-4 h-full">
+                  <div class="flex align-items-start mb-5">
+                    <img src="assets/images/blocks/avatars/circle-big/avatar-m-3.png" width="56" height="56" />
+                    <div class="ml-3">
+                      <span class="block text-900 mb-1 text-xl font-medium">Darrell Steward</span>
+                      <p class="text-600 mt-0 mb-0">Web Designer</p>
+                    </div>
+                  </div>
+                  <ul class="list-none p-0 m-0">
+                    <li class="mb-5">
+                      <div class="flex justify-content-between align-items-center">
+                        <span class="text-900 inline-flex justify-content-between align-items-center">
+                           <i class="pi pi-twitter mr-2"></i>
+                          <span class="font-medium text-900">Open</span>
+                        </span>
+                        <span class="text-cyan-500 font-medium">23.55%</span>
+                      </div>
+                      <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                        <div class="bg-cyan-500 h-full" style="width:34%; border-radius: 4px"></div>
+                      </div>
+                    </li>
+                    <li class="mb-5">
+                      <div class="flex justify-content-between align-items-center">
+                        <span class="text-900 inline-flex justify-content-between align-items-center">
+                          <i class="pi pi-facebook mr-2"></i>
+                          <span class="font-medium text-900">Work in progress</span>
+                        </span>
+                        <span class="text-indigo-500 font-medium">78.65%</span>
+                      </div>
+                      <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                        <div class="bg-indigo-500 h-full" style="width:45%; border-radius: 4px"></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="flex justify-content-between align-items-center">
+                        <span class="text-900 inline-flex justify-content-between align-items-center">
+                           <i class="pi pi-google mr-2"></i>
+                          <span class="font-medium text-900">Done</span>
+                        </span>
+                        <span class="text-orange-500 font-medium">86.54%</span>
+                      </div>
+                      <div class="surface-300 w-full mt-2" style="height: 7px; border-radius: 4px">
+                        <div class="bg-orange-500 h-full" style="width:79%; border-radius: 4px"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

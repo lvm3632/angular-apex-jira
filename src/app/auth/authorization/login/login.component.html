@@ -1,0 +1,83 @@
+<div style="background: url('assets/images/blocks/signin/signin-2.jpg') no-repeat; background-size: cover"
+  class="px-4 py-8 md:px-6 lg:px-8">
+  <div class="flex flex-wrap">
+    <div class="w-full lg:w-6 p-4 lg:p-7" style="background-color: rgba(255,255,255,.7)">
+      <img src="assets/images/blocks/logos/bastion-purple.svg" alt="Image" height="50" class="mb-6">
+      <div class="text-xl text-900 font-500 mb-3">Welcome to APEX Application For JIRA Dashboard</div>
+      <p class="text-600 line-height-3 mt-0 mb-6">Management tool designed to help visualize work, limit
+        work-in-progress, and maximize efficiency.</p>
+      <ul class="list-none p-0 m-0">
+        <li class="flex align-items-start mb-4">
+          <div>
+            <span class="flex align-items-center justify-content-center bg-purple-400"
+              style="width:38px;height:38px;border-radius:10px">
+              <i class="text-xl text-white pi pi-inbox"></i>
+            </span>
+          </div>
+          <div class="ml-3">
+            <span class="font-medium text-900">Reports unlimited</span>
+            <p class="mt-2 mb-0 text-600 line-height-3">
+              Generate reports unlimited and classify them
+            </p>
+          </div>
+        </li>
+        <li class="flex align-items-start mb-4">
+          <div>
+            <span class="flex align-items-center justify-content-center bg-purple-400"
+              style="width:38px;height:38px;border-radius:10px">
+              <i class="text-xl text-white pi pi-shield"></i>
+            </span>
+          </div>
+          <div class="ml-3">
+            <span class="font-medium text-900">Privacy</span>
+            <p class="mt-2 mb-0 text-600 line-height-3">Keep your data protect with us and exchange it with your
+              teammates</p>
+          </div>
+        </li>
+        <li class="flex align-items-start">
+          <div>
+            <span class="flex align-items-center justify-content-center bg-purple-400"
+              style="width:38px;height:38px;border-radius:10px">
+              <i class="text-xl text-white pi pi-globe"></i>
+            </span>
+          </div>
+          <div class="ml-3">
+            <span class="font-medium text-900">Exchange data</span>
+            <p class="mt-2 mb-0 text-600 line-height-3">Get the most recent metrics by the REST API for JIRA</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="w-full lg:w-6 p-4 lg:p-7 surface-card">
+      <div class="text-900 text-2xl font-medium mb-6">Login</div>
+      <label for="email3" class="block text-900 font-medium mb-2">Email</label>
+      <input id="email3" type="text" pInputText class="w-full mb-4">
+
+      <label for="password3" class="block text-900 font-medium mb-2">Password</label>
+      <input id="password3" type="password" pInputText class="w-full mb-4">
+
+      <div class="flex align-items-center justify-content-between mb-6">
+        <div class="flex align-items-center">
+          <p-checkbox id="rememberme3" [binary]="true" styleClass="mr-2"></p-checkbox>
+          <label for="rememberme3">Remember me</label>
+        </div>
+        <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
+      </div>
+
+      <button pButton pRipple label="Login" icon="pi pi-user" class="w-full"></button>
+
+      <p-divider align="center" styleClass="my-6">
+        <span class="text-600 font-normal text-sm">OR</span>
+      </p-divider>
+
+      <button pButton pRipple label="Sign In with GitHub" icon="pi pi-github"
+        class="w-full p-button-secondary"></button>
+
+      <div class="mt-6 text-center text-600">
+        Don't have an account? <a tabindex="0" class="font-medium text-blue-500">Sign up</a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer></footer>
+<router-outlet></router-outlet>
