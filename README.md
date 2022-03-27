@@ -3,8 +3,11 @@ APEX Application For JIRA Dashboard
 
 Team 4
 Kevin Contreras	A01635597
+
 Cristopher Ibarra	A01611408
+
 Michel Lujano		A01636172
+
 Luis Bodart		A01635000
 
 # Frontend
