@@ -1,6 +1,12 @@
 # angular-apex-jira
 APEX Application For JIRA Dashboard
 
+Team 4
+Kevin Contreras	A01635597
+Cristopher Ibarra	A01611408
+Michel Lujano		A01636172
+Luis Bodart		A01635000
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.2.
