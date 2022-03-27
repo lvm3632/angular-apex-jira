@@ -1,7 +1,7 @@
-# angular-apex-jira
-APEX Application For JIRA Dashboard
+# APEX Application For JIRA Dashboard
 
-Team 4
+## Team 4
+
 Kevin Contreras	A01635597
 
 Cristopher Ibarra	A01611408
